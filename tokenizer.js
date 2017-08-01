@@ -89,7 +89,7 @@ module.exports = {
 
                 char = script[++currentToken];
 
-                while (LETTERS.test(char)) {
+                while (char !== '"') {
                     value += char;
                     char = script[++currentToken];
                 }
