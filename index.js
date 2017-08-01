@@ -1,7 +1,9 @@
 const fs = require("fs");
 const tokenizer = require("./tokenizer");
+const parser = require("./parser");
 
-let labels = {};
+let labels = {},
+    stack = [];
 
 fs.readFile(process.argv[2], (err, buff) => {
     if (err) {
@@ -10,7 +12,8 @@ fs.readFile(process.argv[2], (err, buff) => {
 
     try {
         let tokens = tokenizer.tokenize(buff.toString());
-        console.log(tokens);
+        labels = parser.parse(tokens);
+        console.log(labels);
     } catch (e) {
         console.error(e);
     }

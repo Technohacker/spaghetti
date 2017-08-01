@@ -1,2 +1,11 @@
 main:
-    goto main
+    "whereAmI"
+    1
+    "HelloWorld"
+    goto print
+
+whereAmI:
+    "end"
+    1
+    "YouAreInMilesOfSpaghetti"
+    goto print
