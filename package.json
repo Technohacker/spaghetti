@@ -1,0 +1,25 @@
+{
+  "name": "spaghetti",
+  "version": "0.0.1",
+  "description": "A programming language that uses goto extensively",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Technohacker/spaghetti.git"
+  },
+  "keywords": [
+    "spaghetti"
+  ],
+  "author": "Technohacker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Technohacker/spaghetti/issues"
+  },
+  "homepage": "https://github.com/Technohacker/spaghetti#readme"
+}
