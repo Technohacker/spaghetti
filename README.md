@@ -14,5 +14,8 @@ This repository consists of the NodeJS interpreter for Spaghetti.
 ## Status
 * Done
     * Basic tokenizer
+    * Basic parser
+    * Code execution
+    * Console logging operator
 * To Do
-    * Actual program interpretation
+    * More operators
