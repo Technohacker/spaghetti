@@ -28,7 +28,7 @@ fs.readFile(process.argv[2], (err, buff) => {
                     // Check if we need to exit
 
                     if (op.value === "EOF") {
-                        currentLabel = false;
+                        currentLabel = null;
                         return;
                     }
 
