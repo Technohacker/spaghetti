@@ -12,7 +12,16 @@ let operators = {
         return {
             stack
         };
-    }
+    },
+    dup(stack) {
+        let value = stack.pop();
+
+        stack.push(value);
+        stack.push(value);
+        return {
+            stack
+        };
+    },
 };
 
 // Arithmetic operators
