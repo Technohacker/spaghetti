@@ -2,7 +2,7 @@
  * Spaghetti's in built operators
  * @type {Object}
  */
-module.exports = {
+let operators = {
     print(stack) {
         let jumpTo = stack.pop(),
             numArgs = stack.pop();
@@ -14,19 +14,10 @@ module.exports = {
             jumpTo,
             stack
         };
-    },
-    add(stack) {
-        let jumpTo = stack.pop(),
-            numArgs = stack.pop(),
-            sum = 0;
-
-        for (var i = 0; i < numArgs; i += 1) {
-            sum += stack.pop();
-        }
-        stack.push(sum);
-        return {
-            jumpTo,
-            stack
-        }
     }
 };
+
+// Arithmetic operators
+Object.assign(operators, require("./operators/arithmetic"));
+
+module.exports = operators;
