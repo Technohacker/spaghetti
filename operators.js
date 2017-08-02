@@ -14,4 +14,7 @@ Object.assign(operators, require("./operators/stack"));
 // Arithmetic operators
 Object.assign(operators, require("./operators/arithmetic"));
 
+// Relational operators
+Object.assign(operators, require("./operators/relational"));
+
 module.exports = operators;
