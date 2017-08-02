@@ -2,6 +2,7 @@
  * Spaghetti's in built operators
  * @type {Object}
  */
+let variables = {};
 let operators = {
     print(stack) {
         let numArgs = stack.pop();
@@ -18,6 +19,23 @@ let operators = {
 
         stack.push(value);
         stack.push(value);
+        return {
+            stack
+        };
+    },
+    store(stack) {
+        let variableName = stack.pop(),
+            variableValue = stack.pop();
+
+        variables[variableName] = variableValue;
+        return {
+            stack
+        };
+    },
+    retrieve(stack) {
+        let variableName = stack.pop();
+
+        stack.push(variables[variableName]);
         return {
             stack
         };
