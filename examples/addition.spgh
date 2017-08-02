@@ -1,0 +1,11 @@
+main:
+    1               ; Parameter 2
+    2               ; Parameter 1
+    2               ; # of parameters
+    "printValue"    ; Label to jump to after addition
+    goto add
+
+printValue:
+    1
+    "EOF"
+    goto print
