@@ -102,6 +102,16 @@ module.exports = {
                 });
                 continue;
             }
+
+            // Comment
+            if (char === ";") {
+                // Skip everything upto EOL
+                char = script[++currentToken];
+
+                while (char !== "\n") {
+                    char = script[++currentToken];
+                }
+            }
         }
         return tokens;
     }
