@@ -9,5 +9,3 @@ whereAmI:
     1
     "EOF"
     goto print
-
-end:
