@@ -5,6 +5,9 @@
 let variables = {};
 let operators = {};
 
+// Console I/O operators
+Object.assign(operators, require("./operators/consoleio"));
+
 // Stack operators
 Object.assign(operators, require("./operators/stack"));
 
