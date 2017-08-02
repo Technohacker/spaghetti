@@ -29,7 +29,7 @@ module.exports = {
                 continue;
             }
 
-            // Arbitrary strings. Could be labels or goto
+            // Arbitrary strings. Could be labels, booleans or goto
             if (LETTERS.test(char)) {
                 let value = "";
 
@@ -61,6 +61,13 @@ module.exports = {
                     tokens.push({
                         type: "goto",
                         value: label
+                    });
+                    continue;
+                } else if (value === "true" || value === "false") {
+                    // Boolean
+                    tokens.push({
+                        type: "boolean",
+                        value: JSON.parse(value)
                     });
                     continue;
                 } else {
@@ -111,6 +118,7 @@ module.exports = {
                 while (char !== "\n") {
                     char = script[++currentToken];
                 }
+                continue;
             }
         }
         return tokens;
