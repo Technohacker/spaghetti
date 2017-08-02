@@ -4,14 +4,12 @@
  */
 let operators = {
     print(stack) {
-        let jumpTo = stack.pop(),
-            numArgs = stack.pop();
+        let numArgs = stack.pop();
 
         for (var i = 0; i < numArgs; i += 1) {
             console.log(stack.pop());
         }
         return {
-            jumpTo,
             stack
         };
     }

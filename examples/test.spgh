@@ -1,11 +1,7 @@
 main:
-    "Hello, World!"
-    1
-    "whereAmI"
-    goto print
+    "Hello, World!" 1 goto print
+    goto whereAmI
 
 whereAmI:
-    "You are in miles of Spaghetti :P"
-    1
-    "EOF"
-    goto print
+    "You are in miles of Spaghetti :P" 1 goto print
+    goto EOF

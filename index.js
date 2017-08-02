@@ -37,9 +37,14 @@ fs.readFile(process.argv[2], (err, buff) => {
                         currentLabel = labels[op.value];
                         return;
                     } else if (operators[op.value]) {
+                        // If it's an inbuilt operator, make it go back to
+                        // normal code flow in normal cases (except ifs and
+                        // other branching flows)
                         let result = operators[op.value](stack);
                         stack = result.stack;
-                        currentLabel = labels[result.jumpTo];
+                        if (result.jumpTo) {
+                            currentLabel = labels[result.jumpTo];
+                        }
                         return;
                     } else {
                         throw Error(`Invalid label!: ${op.value}`);
