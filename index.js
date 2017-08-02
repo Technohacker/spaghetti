@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require("fs");
 const tokenizer = require("./tokenizer");
 const parser = require("./parser");

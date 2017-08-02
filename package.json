@@ -2,6 +2,7 @@
   "name": "spaghetti",
   "version": "0.0.1",
   "description": "A programming language that uses goto extensively",
+  "bin": "index.js",
   "main": "index.js",
   "directories": {
     "example": "examples"
