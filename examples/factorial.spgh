@@ -1,0 +1,69 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; A recursive factorial program
+; <strike>I don't know WHAT I've done</strike>
+; parameters: num (variable) - input for factorial
+; output: retval (variable) - factorial
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+fact:
+    ; Get the input
+    "num"
+    goto retrieve
+
+    ; Check if the number is 1 or lesser (0 is a possibility), in which case, factorial is complete
+    1 goto isLesserThanOrEquals
+
+    "ret"
+    goto retrieve
+
+    goto jumpIfTrue
+
+    ; Else, continue with the factorial
+
+    ; Get the number again
+    "num"
+    goto retrieve
+
+    ; Multiply it with factorial
+    "factorial"
+    goto retrieve
+
+    2 goto multiply
+
+    ; Decrement num
+    1
+    "num"
+    goto retrieve
+
+    2 goto subtract
+
+    "num"
+    goto store
+
+    ; Store the result
+    "factorial"
+    goto store
+
+    ; Repeat
+    goto fact
+
+main:
+    ; Input
+    5 "num"
+    goto store
+
+    ; Return label
+    "after" "ret"
+    goto store
+
+    ; Set factorial to 1
+    1 "factorial"
+    goto store
+
+    goto fact
+
+after:
+    "factorial"
+    goto retrieve
+    1 goto print
+    goto EOF
