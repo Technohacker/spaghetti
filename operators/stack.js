@@ -1,3 +1,5 @@
+let variables = {};
+
 module.exports = {
     dup(stack) {
         let value = stack.pop();
