@@ -22,22 +22,26 @@ fs.readFile(process.argv[2], (err, buff) => {
 
         // And start up the program!
         let currentLabel = labels.main;
-        while (currentLabel) {
-            currentLabel.forEach(op => {
+        while (true) {
+            for (let i = 0; i < currentLabel.length; i++) {
+                let op = currentLabel[i];
+
                 if (op.instruction === "PushToStack") {
                     stack.push(op.value);
                 } else if (op.instruction === "GoTo") {
                     // Check if we need to exit
 
                     if (op.value === "EOF") {
-                        currentLabel = null;
-                        return;
+                        currentLabel = [];
+                        continue;
                     }
 
                     // Search user defined labels
                     if (labels[op.value]) {
                         currentLabel = labels[op.value];
-                        return;
+                        // Reset loop counter
+                        i = -1;
+                        continue;
                     } else if (operators[op.value]) {
                         // If it's an inbuilt operator, make it go back to
                         // normal code flow in normal cases (except ifs and
@@ -45,14 +49,23 @@ fs.readFile(process.argv[2], (err, buff) => {
                         let result = operators[op.value](stack);
                         stack = result.stack;
                         if (result.jumpTo) {
-                            currentLabel = labels[result.jumpTo];
+                            if (result.jumpTo === "EOF") {
+                                currentLabel = [];
+                            } else {
+                                currentLabel = labels[result.jumpTo];
+                                // Reset loop counter
+                                i = -1;
+                            }
                         }
-                        return;
+                        continue;
                     } else {
                         throw Error(`Invalid label!: ${op.value}`);
                     }
                 }
-            });
+            }
+            if (currentLabel.length === 0) {
+                break;
+            }
         }
     } catch (e) {
         console.error(e);
