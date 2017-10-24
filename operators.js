@@ -17,4 +17,7 @@ Object.assign(operators, require("./operators/arithmetic"));
 // Relational operators
 Object.assign(operators, require("./operators/relational"));
 
+// Conditional operators
+Object.assign(operators, require("./operators/conditional"));
+
 module.exports = operators;
