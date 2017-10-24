@@ -1,11 +1,17 @@
 main:
     2 1 2 goto add
-    1 goto print
+    "2 + 1 = " 2 goto print
 
-    1 2 2 goto subtract
-    1 goto print
+    2 1 2 goto subtract
+    "1 - 2 = " 2 goto print
 
     1 2 3 4 5 5 goto multiply
-    1 goto print
+    "1 * 2 * 3 * 4 * 5 = " 2 goto print
+
+    2 23678 2 goto divide
+    "23678 / 2" 2 goto print
+
+    1039 38923 2 goto modulus
+    "38923 % 1039 = " 2 goto print
 
     goto EOF
