@@ -1,0 +1,6 @@
+main:
+    2 1 goto isGreaterThan
+    "2 > 1"
+    2 goto print
+
+    goto EOF

@@ -1,0 +1,11 @@
+main:
+    "Hello!"
+    "hello"
+    goto store
+
+    "hello"
+    goto retrieve
+
+    1 goto print
+
+    goto EOF
