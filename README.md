@@ -11,6 +11,8 @@ As the name suggests, Spaghetti is a language that uses `goto` extensively, resu
 
 This repository consists of the NodeJS interpreter for Spaghetti.
 
+We hope it'll be your "goto" language :smile:
+
 ## Status
 * Done
     * Basic tokenizer
