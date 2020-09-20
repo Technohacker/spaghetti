@@ -10,6 +10,13 @@ module.exports = {
             stack
         };
     },
+    pop(stack) {
+        stack.pop();
+
+        return {
+            stack
+        };
+    },
     store(stack) {
         let variableName = stack.pop(),
             variableValue = stack.pop();

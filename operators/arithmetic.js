@@ -59,12 +59,4 @@ module.exports = {
             stack
         }
     },
-    negate(stack) {
-        let num = stack.pop();
-
-        stack.push(-num);
-        return {
-            stack
-        }
-    }
 };
