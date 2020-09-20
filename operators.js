@@ -20,4 +20,7 @@ Object.assign(operators, require("./operators/relational"));
 // Conditional operators
 Object.assign(operators, require("./operators/conditional"));
 
+// Array operators
+Object.assign(operators, require("./operators/array"));
+
 module.exports = operators;

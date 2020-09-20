@@ -1,0 +1,34 @@
+main:
+    ; Create array
+    " World"
+    "Hello"
+    2 goto createArray
+
+    ; Print array
+    goto dup
+    1 goto print
+
+    ; Get array length
+    goto length
+    1 goto print
+
+    ; Set array element
+    1
+    "Spaghetti user"
+    goto update
+
+    ; Insert array element
+    2
+    "Fubar"
+    goto insert
+
+    goto dup
+    1 goto print
+
+    ; Delete array element
+    0
+    goto delete
+
+    1 goto print
+    
+    goto EOF
