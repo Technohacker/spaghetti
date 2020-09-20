@@ -48,8 +48,8 @@ fact:
     goto fact
 
 main:
-    ; Input
-    5 "num"
+    ; Input (taken from program arguments)
+    "num"
     goto store
 
     ; Return label

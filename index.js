@@ -6,7 +6,7 @@ const parser = require("./parser");
 const operators = require("./operators");
 
 let labels = {},
-    stack = [];
+    stack = process.argv.slice(3).map(e => JSON.parse(e));
 
 fs.readFile(process.argv[2], (err, buff) => {
     if (err) {
