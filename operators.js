@@ -17,8 +17,8 @@ Object.assign(operators, require("./operators/arithmetic"));
 // Relational operators
 Object.assign(operators, require("./operators/relational"));
 
-// Conditional operators
-Object.assign(operators, require("./operators/conditional"));
+// Branching operators
+Object.assign(operators, require("./operators/branching"));
 
 // Array operators
 Object.assign(operators, require("./operators/array"));

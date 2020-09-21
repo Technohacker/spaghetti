@@ -1,0 +1,68 @@
+; FizzBuzz program
+; Made by Raghu (@razetime)
+
+main:
+    ; Start with 0
+    0 "n" goto store
+    goto loopPartOne
+
+loopPartOne:
+    ; Check if we've reached 100, stop if true
+    100
+    "n" goto retrieve
+    goto areEqual
+    "EOF" goto jumpIfTrue
+
+    ; increment n
+    "n" goto retrieve
+    1
+    2 goto add
+    "n" goto store
+
+    ; n modulo 15
+    15
+    "n" goto retrieve
+    2 goto modulus
+    0 goto areEqual
+    "fizzbuzz" goto jumpIfTrue
+
+    ; n modulo 3
+    3
+    "n" goto retrieve
+    2 goto modulus
+    0 goto areNotEqual
+
+    ; jump without printing if n not divisible by 3
+    "buzz" goto jumpIfTrue
+
+    ; otherwise print and check for 5
+    "Fizz" 1 goto print
+    goto buzz
+
+loopPartTwo:
+    ; if fizz is already printed, don't print anything
+    3
+    "n" goto retrieve
+    2 goto modulus
+    0 goto areEqual
+    "loopPartOne" goto jumpIfTrue
+
+    ; otherwise print n
+    "n" goto retrieve
+    1
+    goto print
+    goto loopPartOne
+
+buzz: 
+    ; check for 5
+    5
+    "n" goto retrieve
+    2 goto modulus
+    0 goto areNotEqual
+    "loopPartTwo" goto jumpIfTrue
+    "Buzz" 1 goto print
+    goto loopPartOne
+
+fizzbuzz:
+    "FizzBuzz" 1 goto print
+    goto loopPartOne
