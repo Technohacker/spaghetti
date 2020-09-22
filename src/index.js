@@ -31,7 +31,7 @@ function updateDebug() {
     });
 }
 
-document.querySelector("#load").addEventListener("click", e => {
+function loadProgram() {
     let source = document.querySelector("#source").value;
     if (!source.endsWith("\n")) {
         source += "\n";
@@ -40,7 +40,9 @@ document.querySelector("#load").addEventListener("click", e => {
     executor.operators._clearVariables();
     updateDebug();
     document.querySelector("#output").textContent = "";
-});
+}
+
+document.querySelector("#load").addEventListener("click", e => loadProgram());
 
 document.querySelector("#step").addEventListener("click", e => {
     executor.stepThrough();
@@ -48,6 +50,7 @@ document.querySelector("#step").addEventListener("click", e => {
 });
 
 document.querySelector("#run").addEventListener("click", e => {
+    loadProgram();
     let f = () => {
         if (executor.stepThrough()) {
             updateDebug();
@@ -56,15 +59,3 @@ document.querySelector("#run").addEventListener("click", e => {
     };
     f();
 });
-
-// fs.readFile(process.argv[2], (err, buff) => {
-//     if (err) {
-//         throw err;
-//     }
-
-//     try {
-
-//     } catch (e) {
-//         console.error(e);
-//     }
-// })
