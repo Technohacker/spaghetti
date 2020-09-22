@@ -1,6 +1,6 @@
 let variables = {};
 
-module.exports = {
+export default {
     dup(stack) {
         let value = stack.pop();
 
@@ -33,5 +33,11 @@ module.exports = {
         return {
             stack
         };
+    },
+    _getVariables() {
+        return variables;
+    },
+    _clearVariables() {
+        variables = {};
     }
 };

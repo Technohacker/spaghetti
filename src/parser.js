@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     parse(tokens) {
         let ast = {},
             currentToken = 0;

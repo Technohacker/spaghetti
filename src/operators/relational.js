@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     areEqual(stack) {
         let operand2 = stack.pop(),
             operand1 = stack.pop();

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     createArray(stack) {
         let length = stack.pop();
 

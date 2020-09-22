@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaghetti Editor</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div id="source-section">
+        <div>
+            <h3>Source</h3>
+            <button id="run">Run</button>
+            <button id="load">Load</button>
+            <button id="step">Step</button>
+        </div>
+        <textarea id="source"></textarea>
+    </div>
+    <div id="output-section">
+        <h3>Output</h3>
+        <div id="output"></div>
+        <div id="debug-info">
+            <div>
+                <h3>Stack</h3>
+                <input type="text"/>
+                <ol id="stack">
+
+                </ol>
+            </div>
+            <div>
+                <h3>Variables</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="variables">
+                        
+                    </tbody>
+                </table>    
+            </div>
+        </div>
+    </div>
+    <script src="src/index.js" type="module"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     goto(stack) {
         let jumpTo = stack.pop();
 

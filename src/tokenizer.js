@@ -1,6 +1,6 @@
 // Inspired by the=super-tiny-compiler
 
-module.exports = {
+export default {
     tokenize(input) {
         /*
             There are some tokens we consider to be basic:

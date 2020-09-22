@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     add(stack) {
         let numArgs = stack.pop(),
             sum = 0;

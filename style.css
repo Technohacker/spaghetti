@@ -1,0 +1,50 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: black;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+}
+
+#source-section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+#output-section {
+    display: grid;
+    grid-template-rows: auto 500px 1fr;
+}
+
+#output {
+    overflow: auto;
+    font-family: monospace;
+    padding-left: 1rem;
+}
+
+#debug-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+textarea {
+    resize: none;
+    border: 1px #333 solid;
+    padding: 1rem;
+    background: #222;
+    color: white;
+    font-family: monospace;
+}
+
+h3 {
+    padding-left: 1rem;
+}
+
+table {
+    width: 100%;
+    border: 1px white solid;
+}
