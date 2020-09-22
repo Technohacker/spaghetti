@@ -1,6 +1,16 @@
 let variables = {};
 
 export default {
+    swap(stack) {
+        let val1 = stack.pop(),
+            val2 = stack.pop();
+
+        stack.push(val1);
+        stack.push(val2);
+        return {
+            stack
+        };
+    },
     dup(stack) {
         let value = stack.pop();
 
